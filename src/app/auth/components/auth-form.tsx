@@ -1,3 +1,5 @@
+'use client'
+
 import { zodResolver } from '@hookform/resolvers/zod'
 import { useForm } from 'react-hook-form'
 import { z } from 'zod'
@@ -21,6 +23,10 @@ export function AuthForm() {
     resolver: zodResolver(signInFormSchema),
   })
 
+  function handleSignIn(data: SignInFormSchema) {
+    console.log(JSON.stringify(data, null, 2))
+  }
+
   return (
     <div className="mx-auto max-w-sm space-y-8">
       <div className="space-y-2 text-center">
@@ -29,7 +35,7 @@ export function AuthForm() {
           Enter your email below to login to your account
         </p>
       </div>
-      <form onSubmit={} className="space-y-4">
+      <form onSubmit={handleSubmit(handleSignIn)} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input
