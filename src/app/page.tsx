@@ -1,7 +1,6 @@
-export default function Home() {
-  return (
-    <main>
-      <h1>Landing Page</h1>
-    </main>
-  )
+import { auth } from '@/services/auth'
+
+export default async function Page() {
+  const session = await auth()
+  return <p>Welcome {session?.user?.name}!</p>
 }

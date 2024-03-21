@@ -1,5 +1,9 @@
 import { AuthForm } from './components/auth-form'
 
-export default function Auth() {
-  return <AuthForm />
+export default function Page() {
+  return (
+    <main className="flex h-screen items-center justify-center">
+      <AuthForm />
+    </main>
+  )
 }
