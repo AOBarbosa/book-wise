@@ -1,7 +1,13 @@
 import { auth } from '@/services/auth'
 
+import { UserInfo } from './_components/user-info'
+
 export default async function Page() {
   const session = await auth()
 
-  return <pre>{JSON.stringify(session?.user?.email, null, 2)}</pre>
+  return (
+    <main className="flex h-screen items-center justify-center">
+      <UserInfo user={session?.user} />
+    </main>
+  )
 }
