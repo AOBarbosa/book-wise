@@ -34,8 +34,8 @@ export function SignInForm() {
       })
 
       toast({
-        title: 'Magic Link Sent',
-        description: 'Check your email for the magic link to login!',
+        title: 'O link de acesso foi enviado',
+        description: 'Verifique seu e-mail para efetuar o login!',
       })
     } catch (error) {
       toast({
