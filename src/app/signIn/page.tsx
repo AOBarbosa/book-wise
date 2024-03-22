@@ -6,7 +6,7 @@ export default function LoginPage() {
   return (
     <main className="grid h-screen grid-cols-2 items-center justify-center">
       <div className="h-full p-5">
-        <div className="flex h-full flex-col items-start justify-between  rounded bg-card p-10">
+        <div className="flex h-full flex-col items-start justify-between  rounded bg-card p-8">
           <div className="flex items-center space-x-3 font-semibold">
             <BookMarked className="size-7" />
 
