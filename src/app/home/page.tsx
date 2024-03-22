@@ -2,7 +2,7 @@ import { auth } from '@/services/auth'
 
 import { UserInfo } from './_components/user-info'
 
-export default async function Page() {
+export default async function Home() {
   const session = await auth()
 
   return (

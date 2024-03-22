@@ -9,10 +9,10 @@ export const {
   auth,
 } = NextAuth({
   pages: {
-    signIn: '/auth',
-    signOut: '/auth',
-    error: '/auth',
-    verifyRequest: '/auth',
+    signIn: '/signIn',
+    signOut: '/signIn',
+    error: '/signIn',
+    verifyRequest: '/signIn',
     newUser: '/home',
   },
   adapter: PrismaAdapter(prisma),

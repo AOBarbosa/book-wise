@@ -17,7 +17,7 @@ const signInFormSchema = z.object({
 
 type SignInFormSchema = z.infer<typeof signInFormSchema>
 
-export function AuthForm() {
+export function SignInForm() {
   const {
     handleSubmit,
     register,
@@ -55,24 +55,31 @@ export function AuthForm() {
   return (
     <div className="mx-auto max-w-sm space-y-8">
       <div className="space-y-2 text-center">
-        <h1 className="text-3xl font-bold">Login</h1>
+        <h1 className="text-3xl font-bold">Boas vindas!</h1>
+
         <p className="text-gray-500 dark:text-gray-400">
-          Enter your email below to login to your account
+          Informe seu e-mail e faça login na sua conta
         </p>
       </div>
+
       <form onSubmit={handleSubmit(handleSignIn)} className="space-y-4">
         <div className="space-y-2">
           <Label htmlFor="email">Email</Label>
           <Input
             id="email"
-            placeholder="m@example.com"
+            placeholder="email@exemplo.com"
             required
             type="email"
             {...register('email')}
           />
         </div>
-        <Button className="w-full" type="submit" disabled={isSubmitting}>
-          {isSubmitting ? 'Sending...' : 'Send Magic Link'}
+
+        <Button
+          className="w-full bg-card hover:bg-card/90"
+          type="submit"
+          disabled={isSubmitting}
+        >
+          {isSubmitting ? 'Enviando' : 'Enviar Magic Link'}
         </Button>
       </form>
     </div>

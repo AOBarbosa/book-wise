@@ -6,12 +6,12 @@ export function middleware(request: NextRequest) {
   const token = request.cookies.get('authjs.session-token')
   const pathname = request.nextUrl.pathname
 
-  if (pathname === '/auth' && token) {
+  if (pathname === '/signIn' && token) {
     return NextResponse.redirect(new URL(getUrl('/home')))
   }
 
   if (pathname.includes('/home') && !token) {
-    return NextResponse.redirect(new URL(getUrl('/auth')))
+    return NextResponse.redirect(new URL(getUrl('/signIn')))
   }
 }
 

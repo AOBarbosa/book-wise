@@ -1,6 +1,9 @@
+import { redirect } from 'next/navigation'
+
 import { auth } from '@/services/auth'
 
 export default async function Page() {
   const session = await auth()
-  return <p>Welcome {session?.user?.name}!</p>
+
+  return <div>{session ? redirect('/home') : redirect('/signIn')}</div>
 }
