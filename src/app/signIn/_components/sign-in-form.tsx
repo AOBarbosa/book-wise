@@ -8,7 +8,6 @@ import { z } from 'zod'
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Label } from '@/components/ui/label'
-import { ToastAction } from '@/components/ui/toast'
 import { toast } from '@/components/ui/use-toast'
 
 const signInFormSchema = z.object({
@@ -41,13 +40,9 @@ export function SignInForm() {
     } catch (error) {
       toast({
         variant: 'destructive',
-        title: 'Uh oh! Something went wrong.',
-        description: 'There was a problem with your magic link.',
-        action: (
-          <ToastAction altText="Resend Magic Link">
-            Resend Magic Link
-          </ToastAction>
-        ),
+        title: 'Uh oh! Alguma coisa deu errado',
+        description:
+          'Ocorreu um problema com seu link de acesso, por favor tente novamente',
       })
     }
   }
